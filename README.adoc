@@ -1,0 +1,61 @@
+= Wandera Notification Service
+
+Simple notification service
+
+Path to CSV notification file is specified in dropwizard.yaml
+
+== Build & Run
+[source,shell]
+----
+$ mvn clean install
+$ java -jar target/notifications-0.0.1-SNAPSHOT.jar server dropwizard.yaml
+----
+
+== REST API
+Rest API is using basic authentication
+
+User database contains 4 users
+
+User:password user1:pass, user2:pass, user4:pass, user8:pass
+
+Get all notifications of logged in user
+[source,shell]
+----
+/notifications
+curl -ivX GET 'http://user8:pass@localhost:8080/notifications'
+----
+
+Detailed view of a notification
+[source,shell]
+----
+/notifications/{notificationGuid}
+curl -ivX GET 'http://user1:pass@localhost:8080/notifications/532a20d3-aef0-4554-9bc1-9561dbd6151c'
+----
+
+Read notification
+[source,shell]
+----
+/notifications/{notificationGuid}/read
+curl -ivX PUT 'http://user1:pass@localhost:8080/notifications/532a20d3-aef0-4554-9bc1-9561dbd6151c/read'
+----
+
+Delete notification
+[source,shell]
+----
+/notifications/{notificationGuid}
+curl -ivX DELETE 'http://user1:pass@localhost:8080/notifications/532a20d3-aef0-4554-9bc1-9561dbd6151c'
+----
+
+Bonus not authenticated endpints:
+Returns server time and running environment
+[source,shell]
+----
+/ping
+curl -ivX GET 'http://localhost:8080/ping'
+----
+
+== Notes & Suggestions & Improvements
+=== Users & Authentication
+* I suppose that notificationGuid is unique across all Wandera environment.
+* I suppose that notificationGuid contains only valid characters for URL path.
+
