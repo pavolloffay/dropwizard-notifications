@@ -1,4 +1,4 @@
-= Wandera Notification Service
+= Dropwizard Notification Service
 
 Simple notification service
 
