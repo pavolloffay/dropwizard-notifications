@@ -56,6 +56,6 @@ curl -ivX GET 'http://localhost:8080/ping'
 
 == Notes & Suggestions & Improvements
 === Users & Authentication
-* I suppose that notificationGuid is unique across all Wandera environment.
+* I suppose that notificationGuid is unique across all environment.
 * I suppose that notificationGuid contains only valid characters for URL path.
 
