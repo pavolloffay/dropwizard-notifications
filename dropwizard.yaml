@@ -1,7 +1,7 @@
 template: Environment %s
 environment: DEV
 
-notificationFile: WanderaNotificationDataSheet.csv
+notificationFile: NotificationDataSheet.csv
 
 server:
   type: simple

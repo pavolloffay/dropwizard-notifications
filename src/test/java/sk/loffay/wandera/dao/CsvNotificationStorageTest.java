@@ -16,7 +16,7 @@ import sk.loffay.wandera.model.Notification;
  */
 public class CsvNotificationStorageTest {
 
-    public final String NOTIFICATION_FILE = "WanderaNotificationDataSheet.csv";
+    public final String NOTIFICATION_FILE = "NotificationDataSheet.csv";
 
     static {
         Logger root = (Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
